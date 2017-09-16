@@ -46,3 +46,8 @@ sysinfo.txt
 bin/
 obj/
 .packages
+
+### Rider ###
+/Assets/Plugins/Editor/JetBrains/
+/Assets/Plugins/Editor/JetBrains.meta
+.idea/

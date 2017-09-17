@@ -13,6 +13,7 @@ public class Main : MonoBehaviour
         Debug.Log("testing".Italic());
         Debug.Log("testing".Bold().Italic());
         Debug.Log("testing".Italic().Bold());
+        Debug.Log("testing".Italic().Bold().Color(Color.red));
 
         array = new int[10];
         array.Fill(3);
@@ -27,7 +28,7 @@ public class Main : MonoBehaviour
 
     void Update()
     {
-        MiniBus.PublishEvent(GameEvent.TEST, new Dictionary<string, object> {{"test", a++}});
+//        MiniBus.PublishEvent(GameEvent.TEST, new Dictionary<string, object> {{"test", a++}});
     }
 
     private void OnDestroy()

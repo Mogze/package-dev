@@ -1,15 +1,22 @@
-﻿namespace zehreken.i_cheat.Extensions
+﻿using UnityEngine;
+
+namespace zehreken.i_cheat.Extensions
 {
     public static class StringExtensions
     {
         public static string Italic(this string s)
         {
-            return "<i>" + s + "</i>";
+            return string.Format("<i>{0}</i>", s);
         }
 
         public static string Bold(this string s)
         {
-            return "<b>" + s + "</b>";
+            return string.Format("<b>{0}</b>", s);
+        }
+
+        public static string Color(this string s, Color color)
+        {
+            return string.Format("<color={0}>{1}</color>", color, s);
         }
     }
 }

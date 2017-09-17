@@ -28,7 +28,7 @@ public class Main : MonoBehaviour
 
     void Update()
     {
-//        MiniBus.PublishEvent(GameEvent.TEST, new Dictionary<string, object> {{"test", a++}});
+        MiniBus.PublishEvent(GameEvent.TEST, new Dictionary<string, object> {{"test", a++}});
     }
 
     private void OnDestroy()

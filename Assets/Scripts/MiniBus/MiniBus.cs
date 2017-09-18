@@ -25,7 +25,7 @@ namespace zehreken.i_cheat.MiniBus
             }
         }
 
-        public static void PublishEvent(GameEvent e, Dictionary<string, object> data)
+        public static void PublishEvent(GameEvent e, Dictionary<string, object> data = null)
         {
             if (eventToActionMap.ContainsKey(e))
             {

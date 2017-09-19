@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using zehreken.i_cheat;
 using zehreken.i_cheat.Extensions;
 using zehreken.i_cheat.MiniBus;
 
@@ -9,11 +10,11 @@ public class Main : MonoBehaviour
     private int a = 0;
     void Start()
     {
-        Debug.Log("testing".Bold());
-        Debug.Log("testing".Italic());
-        Debug.Log("testing".Bold().Italic());
-        Debug.Log("testing".Italic().Bold());
-        Debug.Log("testing".Italic().Bold().Color(Color.red));
+        Dbg.Log("testing".Bold());
+        Dbg.Log("testing".Italic());
+        Dbg.Log("testing".Bold().Italic());
+        Dbg.Log("testing".Italic().Bold());
+        Dbg.Log("testing".Italic().Bold().Color(Color.red));
 
         array = new int[10];
         array.Fill(3);
@@ -23,7 +24,7 @@ public class Main : MonoBehaviour
 
     private void MiniBusTest(Dictionary<string, object> data)
     {
-        Debug.Log(data["test"].ToString().Bold());
+        Dbg.Log(data["test"].ToString().Bold());
     }
 
     void Update()

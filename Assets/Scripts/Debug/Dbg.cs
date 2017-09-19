@@ -2,12 +2,12 @@
 // You have to use the .dll to trace the stack correctly
 // Otherwise all debug lines will point this class
 // You should change the UnityEngine.dll path and Dbg.cs path appropriately
-// mcs -r:/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll -target:library path/to/Dbg.cs
-///*
+// mcs -sdk:2 -r:/Applications/Unity/Unity.app/Contents/Managed/UnityEngine.dll -target:library Assets/Scripts/Debug/Dbg.cs
 
+///*
 using UnityEngine;
 
-namespace GramGames.Framework.Log
+namespace zehreken.i_cheat
 {
     public static class Dbg
     {
@@ -31,12 +31,14 @@ namespace GramGames.Framework.Log
         public static void Log(object message)
         {
             bool isDebug = false;
-#if DEBUG
+#if DBG
             isDebug = true;
 #endif
 
-            if (Debug.isDebugBuild || isDebug)
+            if (isDebug)
+            {
                 Debug.Log(string.Format("{0} : {1} : {2}", TAG, CurrentClass, message));
+            }
         }
 
         public static void LogWarning(object message)

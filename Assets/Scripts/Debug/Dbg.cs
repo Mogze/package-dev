@@ -4,7 +4,7 @@
 // You should change the UnityEngine.dll path and Dbg.cs path appropriately
 // mcs -sdk:2 -r:/Applications/Unity/Unity.app/Contents/Managed/UnityEngine.dll -target:library Assets/Scripts/Debug/Dbg.cs
 
-///*
+/*
 using UnityEngine;
 
 namespace zehreken.i_cheat
@@ -30,12 +30,7 @@ namespace zehreken.i_cheat
 
         public static void Log(object message)
         {
-            bool isDebug = false;
-#if DBG
-            isDebug = true;
-#endif
-
-            if (isDebug)
+            if (Debug.isDebugBuild)
             {
                 Debug.Log(string.Format("{0} : {1} : {2}", TAG, CurrentClass, message));
             }

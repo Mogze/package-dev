@@ -18,5 +18,12 @@ namespace zehreken.i_cheat.Extensions
         {
             return string.Format("<color={0}>{1}</color>", color, s);
         }
+        
+        public static string ToString(this string s)
+        {
+            // Write a function can convert any
+            // object to string using reflection
+            return s;
+        }
     }
 }

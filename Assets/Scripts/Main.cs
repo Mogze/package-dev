@@ -3,11 +3,13 @@ using UnityEngine;
 using zehreken.i_cheat;
 using zehreken.i_cheat.Extensions;
 using zehreken.i_cheat.MiniBus;
+using zehreken.i_cheat.MockData;
 
 public class Main : MonoBehaviour
 {
     public int[] array;
     private int a = 0;
+
     void Start()
     {
         Dbg.Log("testing".Bold());
@@ -18,8 +20,10 @@ public class Main : MonoBehaviour
 
         array = new int[10];
         array.Fill(3);
-        
+
         MiniBus.SubscribeToEvent(GameEvent.TEST, MiniBusTest);
+        
+        GenericToStringTest();
     }
 
     private void MiniBusTest(Dictionary<string, object> data)
@@ -27,9 +31,17 @@ public class Main : MonoBehaviour
         Dbg.Log(data["test"].ToString().Bold());
     }
 
+    private void GenericToStringTest()
+    {
+        var testData = new TestData();
+        testData.int_1 = 12;
+        testData.string_1 = "twelve";
+        StringExtensions.ToString(testData);
+    }
+
     void Update()
     {
-        MiniBus.PublishEvent(GameEvent.TEST, new Dictionary<string, object> {{"test", a++}});
+//        MiniBus.PublishEvent(GameEvent.TEST, new Dictionary<string, object> {{"test", a++}});
     }
 
     private void OnDestroy()

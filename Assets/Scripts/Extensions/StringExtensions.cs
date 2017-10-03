@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Runtime;
+using UnityEngine;
 
 namespace zehreken.i_cheat.Extensions
 {
@@ -19,11 +20,11 @@ namespace zehreken.i_cheat.Extensions
             return string.Format("<color={0}>{1}</color>", color, s);
         }
         
-        public static string ToString(this string s)
+        public static string ToString<T>(T obj)
         {
             // Write a function can convert any
             // object to string using reflection
-            return s;
+            return obj.ToString();
         }
     }
 }

@@ -9,42 +9,42 @@ using UnityEngine;
 
 namespace zehreken.i_cheat
 {
-    public static class Dbg
-    {
-        public const string TAG = "UNITY";
+	public static class Dbg
+	{
+		public const string TAG = "UNITY";
 
-        public static string CurrentClass
-        {
-            get
-            {
-                var stackTrace = new System.Diagnostics.StackTrace();
+		public static string CurrentClass
+		{
+			get
+			{
+				var stackTrace = new System.Diagnostics.StackTrace();
 
-                var index = Mathf.Min(stackTrace.FrameCount - 1, 2);
+				var index = Mathf.Min(stackTrace.FrameCount - 1, 2);
 
-                if (index < 0)
-                    return "[NoClass]";
+				if (index < 0)
+					return "[NoClass]";
 
-                return "[" + stackTrace.GetFrame(index).GetMethod().DeclaringType.Name + "]";
-            }
-        }
+				return "[" + stackTrace.GetFrame(index).GetMethod().DeclaringType.Name + "]";
+			}
+		}
 
-        public static void Log(object message)
-        {
-            if (Debug.isDebugBuild)
-            {
-                Debug.Log(string.Format("{0} : {1} : {2}", TAG, CurrentClass, message));
-            }
-        }
+		public static void Log(object message)
+		{
+			if (Debug.isDebugBuild)
+			{
+				Debug.Log(string.Format("{0} : {1} : {2}", TAG, CurrentClass, message));
+			}
+		}
 
-        public static void LogWarning(object message)
-        {
-            Debug.LogWarning(string.Format("{0} : {1} : {2}", TAG, CurrentClass, message));
-        }
+		public static void LogWarning(object message)
+		{
+			Debug.LogWarning(string.Format("{0} : {1} : {2}", TAG, CurrentClass, message));
+		}
 
-        public static void LogError(object message)
-        {
-            Debug.LogError(string.Format("{0} : {1} :{2}", TAG, CurrentClass, message));
-        }
-    }
+		public static void LogError(object message)
+		{
+			Debug.LogError(string.Format("{0} : {1} :{2}", TAG, CurrentClass, message));
+		}
+	}
 }
 //*/

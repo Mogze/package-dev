@@ -1,7 +1,7 @@
 ﻿namespace zehreken.i_cheat.MiniBus
 {
-    public enum GameEvent
-    {
-        TEST,
-    }
+	public enum GameEvent
+	{
+		TEST,
+	}
 }

@@ -36,7 +36,8 @@ public class Main : MonoBehaviour
         var testData = new TestData();
         testData.int_1 = 12;
         testData.string_1 = "twelve";
-        StringExtensions.ToString(testData);
+        testData.float_1 = 12.0f;
+        Debug.Log(StringExtensions.ToString(testData));
     }
 
     void Update()

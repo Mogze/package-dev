@@ -27,17 +27,17 @@ namespace zehreken.i_cheat.Extensions
             var members = typeof(T).GetMembers();
             foreach (var memberInfo in members)
             {
-                Debug.Log(memberInfo.ToString());
+                Debug.Log("member: " + memberInfo.ToString());
             }
             var properties = typeof(T).GetProperties();
             foreach (var propertyInfo in properties)
             {
-                Debug.Log(propertyInfo.ToString());
+                Debug.Log("property: " + propertyInfo.ToString());
             }
             var fields = typeof(T).GetFields();
             foreach (var fieldInfo in fields)
             {
-                Debug.Log(fieldInfo.ToString());
+                Debug.Log("field: " + fieldInfo.ToString());
             }
             return obj.ToString();
         }

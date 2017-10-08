@@ -7,46 +7,46 @@ using zehreken.i_cheat.MockData;
 
 public class Main : MonoBehaviour
 {
-    public int[] array;
-    private int a = 0;
+	public int[] array;
+	private int a = 0;
 
-    void Start()
-    {
-        Dbg.Log("testing".Bold());
-        Dbg.Log("testing".Italic());
-        Dbg.Log("testing".Bold().Italic());
-        Dbg.Log("testing".Italic().Bold());
-        Dbg.Log("testing".Italic().Bold().Color(Color.red));
+	void Start()
+	{
+		Dbg.Log("testing".Bold());
+		Dbg.Log("testing".Italic());
+		Dbg.Log("testing".Bold().Italic());
+		Dbg.Log("testing".Italic().Bold());
+		Dbg.Log("testing".Italic().Bold().Color(Color.red));
 
-        array = new int[10];
-        array.Fill(3);
+		array = new int[10];
+		array.Fill(3);
 
-        MiniBus.SubscribeToEvent(GameEvent.TEST, MiniBusTest);
-        
-        GenericToStringTest();
-    }
+		MiniBus.SubscribeToEvent(GameEvent.TEST, MiniBusTest);
 
-    private void MiniBusTest(Dictionary<string, object> data)
-    {
-        Dbg.Log(data["test"].ToString().Bold());
-    }
+		GenericToStringTest();
+	}
 
-    private void GenericToStringTest()
-    {
-        var testData = new TestData();
-        testData.int_1 = 12;
-        testData.string_1 = "twelve";
-        testData.float_1 = 12.0f;
-        Debug.Log(StringExtensions.ToString(testData));
-    }
+	private void MiniBusTest(Dictionary<string, object> data)
+	{
+		Dbg.Log(data["test"].ToString().Bold());
+	}
 
-    void Update()
-    {
+	private void GenericToStringTest()
+	{
+		var testData = new TestData();
+		testData.int_1 = 12;
+		testData.string_1 = "twelve";
+		testData.dict_1 = new Dictionary<string, string> {{"asd", "qwe"}};
+		Debug.Log(StringExtensions.ToString(testData));
+	}
+
+	void Update()
+	{
 //        MiniBus.PublishEvent(GameEvent.TEST, new Dictionary<string, object> {{"test", a++}});
-    }
+	}
 
-    private void OnDestroy()
-    {
-        MiniBus.UnsubscribeFromEvent(GameEvent.TEST, MiniBusTest);
-    }
+	private void OnDestroy()
+	{
+		MiniBus.UnsubscribeFromEvent(GameEvent.TEST, MiniBusTest);
+	}
 }

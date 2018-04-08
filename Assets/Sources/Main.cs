@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using zehreken.i_cheat;
 using zehreken.i_cheat.Extensions;
 using zehreken.i_cheat.MiniBus;
@@ -7,8 +9,10 @@ using zehreken.i_cheat.MockData;
 
 public class Main : MonoBehaviour
 {
-	public int[] array;
-	private int a = 0;
+	[SerializeField] private Elements _elements;
+	public int[] Array;
+	private int _a = 0;
+	private MiniBusTests _miniBusTests;
 
 	void Start()
 	{
@@ -18,12 +22,14 @@ public class Main : MonoBehaviour
 		Dbg.Log("testing".Italic().Bold());
 		Dbg.Log("testing".Italic().Bold().Color(Color.red));
 
-		array = new int[10];
-		array.Fill(3);
+		Array = new int[10];
+		Array.Fill(3);
 
-		MiniBus.SubscribeToEvent(GameEvent.TEST, MiniBusTest);
+		MiniBus.SubscribeToEvent(GameEvent.Test, MiniBusTest);
 
 		GenericToStringTest();
+		
+		_miniBusTests = new MiniBusTests(this);
 	}
 
 	private void MiniBusTest(Dictionary<string, object> data)
@@ -42,11 +48,30 @@ public class Main : MonoBehaviour
 
 	void Update()
 	{
-//        MiniBus.PublishEvent(GameEvent.TEST, new Dictionary<string, object> {{"test", a++}});
+        MiniBus.PublishEvent(GameEvent.Test, new Dictionary<string, object> {{"test", _a++}});
+		
+		_miniBusTests.Update();
+	}
+
+	public Elements GetElements()
+	{
+		return _elements;
 	}
 
 	private void OnDestroy()
 	{
-		MiniBus.UnsubscribeFromEvent(GameEvent.TEST, MiniBusTest);
+		MiniBus.UnsubscribeFromEvent(GameEvent.Test, MiniBusTest);
+
+		_miniBusTests = null;
+	}
+
+	[Serializable]
+	public struct Elements
+	{
+		public Text text;
+		public Image image;
+		public GameObject toggleObject;
+		public Sprite Sprite1;
+		public Sprite Sprite2;
 	}
 }

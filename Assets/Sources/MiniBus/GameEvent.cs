@@ -2,6 +2,9 @@
 {
 	public enum GameEvent
 	{
-		TEST,
+		Test,
+		UpdateText,
+		UpdateImage,
+		UpdateGObjectActive,
 	}
 }

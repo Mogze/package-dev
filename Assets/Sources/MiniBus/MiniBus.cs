@@ -5,8 +5,7 @@ namespace zehreken.i_cheat.MiniBus
 {
 	public static class MiniBus
 	{
-		private static readonly Dictionary<GameEvent, List<Action<Dictionary<string, object>>>> eventToActionMap =
-			new Dictionary<GameEvent, List<Action<Dictionary<string, object>>>>();
+		private static readonly Dictionary<GameEvent, List<Action<Dictionary<string, object>>>> eventToActionMap = new Dictionary<GameEvent, List<Action<Dictionary<string, object>>>>();
 
 		public static void SubscribeToEvent(GameEvent e, Action<Dictionary<string, object>> a)
 		{
@@ -14,6 +13,7 @@ namespace zehreken.i_cheat.MiniBus
 			{
 				eventToActionMap.Add(e, new List<Action<Dictionary<string, object>>>());
 			}
+
 			eventToActionMap[e].Add(a);
 		}
 

@@ -1,5 +1,4 @@
-﻿using System.Runtime;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace zehreken.i_cheat.Extensions
 {
@@ -28,6 +27,7 @@ namespace zehreken.i_cheat.Extensions
 			{
 				s += fieldInfo.Name + ": " + fieldInfo.GetValue(obj) + "\n";
 			}
+
 			return s;
 		}
 	}

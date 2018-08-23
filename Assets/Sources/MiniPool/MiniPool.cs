@@ -15,6 +15,9 @@ namespace zehreken.i_cheat.MiniPool
     {
         private static readonly Dictionary<PrefabName, GameObject> Prefabs;
         private static readonly Dictionary<PrefabName, List<GameObject>> NameToObjectPool;
+#if UNITY_EDITOR
+        private static GameObject _infoObject;
+#endif
 
         static MiniPool()
         {
@@ -24,6 +27,11 @@ namespace zehreken.i_cheat.MiniPool
             {
                 NameToObjectPool.Add((PrefabName) Enum.Parse(typeof(PrefabName), name), new List<GameObject>());
             }
+
+#if UNITY_EDITOR
+            _infoObject = new GameObject("PoolInfo");
+            _infoObject.AddComponent<PoolInfo>();
+#endif
         }
 
         public static GameObject Create(PrefabName name, Vector3 pos)
@@ -55,5 +63,19 @@ namespace zehreken.i_cheat.MiniPool
         {
             gameObject.SetActive(false);
         }
+
+#if UNITY_EDITOR
+        public static string GetInfo()
+        {
+            var s = "";
+            foreach (var pair in NameToObjectPool)
+            {
+                s += pair.Key + ": " + pair.Value.Count;
+                s += "\n";
+            }
+
+            return s;
+        }
+#endif
     }
 }

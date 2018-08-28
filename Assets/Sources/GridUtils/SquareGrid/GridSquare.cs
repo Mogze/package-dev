@@ -11,9 +11,9 @@ namespace zehreken.i_cheat
             
         }
 
-        public static int[,] CreateGrid()
+        public static int[,] CreateGrid(int rowCount, int columnCount)
         {
-            return new int[10, 10];
+            return new int[rowCount, columnCount];
         }
     }
 }

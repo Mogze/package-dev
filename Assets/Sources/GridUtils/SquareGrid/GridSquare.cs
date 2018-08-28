@@ -1,19 +1,34 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 
 namespace zehreken.i_cheat
 {
     public static class GridSquareUtils
     {
+        private static Dictionary<int, GridEntity> _grid = new Dictionary<int, GridEntity>();
+
         static GridSquareUtils()
         {
-            
         }
 
-        public static int[,] CreateGrid(int rowCount, int columnCount)
+        public static Dictionary<int, GridEntity> CreateGrid(int rowCount, int columnCount)
         {
-            return new int[rowCount, columnCount];
+            var newGrid = new Dictionary<int, GridEntity>();
+            for (int row = 0; row < rowCount; row++)
+            {
+                for (int column = 0; column < columnCount; column++)
+                {
+                    var gridEntity = new GridEntity();
+                    gridEntity.AddCoord2(row, column);
+                    newGrid.Add(GetHash(row, column), gridEntity);
+                }
+            }
+
+            return newGrid;
+        }
+
+        private static int GetHash(int row, int column)
+        {
+            return (row + column) * (row + column + 1) / 2 + column;
         }
     }
 }

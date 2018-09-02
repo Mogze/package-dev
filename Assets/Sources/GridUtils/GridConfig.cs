@@ -2,9 +2,9 @@
 {
 	public static class GridConfig
 	{
-		public const float TileWidth = 0.42f;
-		public const float TileHeight = 0.49f;
-		public const float RowOffset = 2f;
-		public const float ColumnOffset = -2f;
+		public const float TileWidth = 1f;
+		public const float TileHeight = 1f;
+		public const float RowOffset = 4.5f;
+		public const float ColumnOffset = -4.5f;
 	}
 }

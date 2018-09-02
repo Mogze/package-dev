@@ -25,7 +25,9 @@ namespace zehreken.i_cheat
 		{
 			foreach (var gridEntity in entities)
 			{
-				gridEntity.view.value.transform.localPosition = Vector3.left;
+				var pos = new Vector3(GridConfig.ColumnOffset + GridConfig.TileWidth * gridEntity.coord2.column,
+					GridConfig.RowOffset - GridConfig.TileHeight * gridEntity.coord2.row);
+				gridEntity.view.value.transform.localPosition = pos;
 			}
 		}
 	}

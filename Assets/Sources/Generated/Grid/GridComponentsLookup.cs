@@ -9,14 +9,20 @@
 public static class GridComponentsLookup {
 
     public const int Coord2 = 0;
+    public const int Prefab = 1;
+    public const int View = 2;
 
-    public const int TotalComponents = 1;
+    public const int TotalComponents = 3;
 
     public static readonly string[] componentNames = {
-        "Coord2"
+        "Coord2",
+        "Prefab",
+        "View"
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(zehreken.i_cheat.Coord2Component)
+        typeof(zehreken.i_cheat.Coord2Component),
+        typeof(zehreken.i_cheat.PrefabComponent),
+        typeof(zehreken.i_cheat.ViewComponent)
     };
 }

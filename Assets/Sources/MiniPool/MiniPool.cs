@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace zehreken.i_cheat.MiniPool
+namespace zehreken.i_cheat
 {
     public enum PrefabName
     {

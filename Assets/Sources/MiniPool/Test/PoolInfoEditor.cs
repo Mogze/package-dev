@@ -1,6 +1,6 @@
 ﻿using UnityEditor;
 using UnityEngine;
-using zehreken.i_cheat.MiniPool;
+using zehreken.i_cheat;
 
 [CustomEditor(typeof(PoolInfo))]
 public class PoolInfoEditor : Editor

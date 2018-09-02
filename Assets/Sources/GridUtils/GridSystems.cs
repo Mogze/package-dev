@@ -4,7 +4,8 @@
 	{
 		public GridSystems(Contexts contexts)
 		{
-			
+			Add(new AddViewSystem(contexts.grid));
+			Add(new GridPositionSystem(contexts.grid));
 		}
 	}
 }

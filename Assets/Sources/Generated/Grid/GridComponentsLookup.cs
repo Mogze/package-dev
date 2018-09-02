@@ -9,20 +9,32 @@
 public static class GridComponentsLookup {
 
     public const int Coord2 = 0;
-    public const int Prefab = 1;
-    public const int View = 2;
+    public const int Frontier = 1;
+    public const int GCost = 2;
+    public const int HCost = 3;
+    public const int Prefab = 4;
+    public const int View = 5;
+    public const int Visited = 6;
 
-    public const int TotalComponents = 3;
+    public const int TotalComponents = 7;
 
     public static readonly string[] componentNames = {
         "Coord2",
+        "Frontier",
+        "GCost",
+        "HCost",
         "Prefab",
-        "View"
+        "View",
+        "Visited"
     };
 
     public static readonly System.Type[] componentTypes = {
         typeof(zehreken.i_cheat.Coord2Component),
+        typeof(zehreken.i_cheat.FrontierComponent),
+        typeof(zehreken.i_cheat.GCostComponent),
+        typeof(zehreken.i_cheat.HCostComponent),
         typeof(zehreken.i_cheat.PrefabComponent),
-        typeof(zehreken.i_cheat.ViewComponent)
+        typeof(zehreken.i_cheat.ViewComponent),
+        typeof(zehreken.i_cheat.VisitedComponent)
     };
 }

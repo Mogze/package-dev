@@ -17,7 +17,7 @@ namespace zehreken.i_cheat
             {
                 for (int column = 0; column < columnCount; column++)
                 {
-                    var gridEntity = new GridEntity();
+                    var gridEntity = Contexts.sharedInstance.grid.CreateEntity();
                     gridEntity.AddCoord2(row, column);
                     newGrid.Add(GetHash(row, column), gridEntity);
                 }

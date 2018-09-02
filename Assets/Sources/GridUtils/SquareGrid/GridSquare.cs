@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace zehreken.i_cheat
 {
-	public static class GridSquareUtils
+	public static class GridSquare
 	{
 		private static Dictionary<int, GridEntity> _grid = new Dictionary<int, GridEntity>();
 
-		static GridSquareUtils()
+		static GridSquare()
 		{
 		}
 

@@ -9,7 +9,7 @@ public class GridTest : MonoBehaviour
 	{
 		_systems = new GridSystems(Contexts.sharedInstance);
 		
-		GridSquareUtils.CreateGrid(10, 10);
+		GridSquare.CreateGrid(19, 10);
 	}
 
 	void Update()

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using zehreken.i_cheat;
 using zehreken.i_cheat.Extensions;
-using zehreken.i_cheat.MiniBus;
+using Mogze.Core.MiniBus;
 using zehreken.i_cheat.MockData;
 
 public class Main : MonoBehaviour

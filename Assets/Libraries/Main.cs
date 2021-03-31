@@ -29,7 +29,7 @@ public class Main : MonoBehaviour
 
 		GenericToStringTest();
 		
-		_miniBusTests = new MiniBusTests(this);
+		// _miniBusTests = new MiniBusTests(this);
 	}
 
 	private void MiniBusTest(Dictionary<string, object> data)
@@ -50,7 +50,7 @@ public class Main : MonoBehaviour
 	{
         MiniBus.PublishEvent(GameEvent.Test, new Dictionary<string, object> {{"test", _a++}});
 		
-		_miniBusTests.Update();
+		// _miniBusTests.Update();
 	}
 
 	public Elements GetElements()

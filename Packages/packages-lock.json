@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.mogze.core": {
+      "version": "https://github.com/zehreken/mogze-core.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "4f98b56b7650b3e91b209326a130e0f5f2ab10d6"
+    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,

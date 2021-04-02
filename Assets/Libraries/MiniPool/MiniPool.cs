@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace zehreken.i_cheat
+namespace Mogze.Core.MiniPool
 {
     public enum PrefabName
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEditor;
 using UnityEngine;
-using zehreken.i_cheat;
+using Mogze.Core.MiniPool;
 
 [CustomEditor(typeof(PoolInfo))]
 public class PoolInfoEditor : Editor

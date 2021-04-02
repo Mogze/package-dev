@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using zehreken.i_cheat;
+using Mogze.Core.MiniPool;
 
 public class MiniPoolTest : MonoBehaviour
 {

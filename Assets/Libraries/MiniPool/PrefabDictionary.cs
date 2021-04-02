@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using zehreken.i_cheat;
+using Mogze.Core.MiniPool;
 
 public class PrefabDictionary : ScriptableObject
 {

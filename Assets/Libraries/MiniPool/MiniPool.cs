@@ -59,7 +59,7 @@ namespace Mogze.Core.MiniPool
             return temp;
         }
 
-        public static void SendToPool(this GameObject gameObject)
+        public static void ReturnToPool(this GameObject gameObject)
         {
             gameObject.SetActive(false);
         }

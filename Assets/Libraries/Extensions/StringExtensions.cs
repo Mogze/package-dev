@@ -6,17 +6,18 @@ namespace zehreken.i_cheat.Extensions
 	{
 		public static string Italic(this string s)
 		{
-			return string.Format("<i>{0}</i>", s);
+			return $"<i>{s}</i>";
 		}
 
 		public static string Bold(this string s)
 		{
-			return string.Format("<b>{0}</b>", s);
+			return $"<b>{s}</b>";
 		}
 
 		public static string Color(this string s, Color color)
 		{
-			return string.Format("<color={0}>{1}</color>", color, s);
+            var hexColor = ColorUtility.ToHtmlStringRGBA(color);
+			return $"<color=#{hexColor}>{s}</color>";
 		}
 
 		public static string ToString<T>(T obj)

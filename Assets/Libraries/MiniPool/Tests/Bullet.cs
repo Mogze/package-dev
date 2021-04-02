@@ -14,7 +14,7 @@ public class Bullet : MonoBehaviour
         transform.Translate(Vector3.up * 10f * Time.deltaTime);
         if (transform.localPosition.y > 10f)
         {
-            gameObject.SendToPool();
+            gameObject.ReturnToPool();
         }
     }
 }

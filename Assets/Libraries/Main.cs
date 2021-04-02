@@ -6,7 +6,6 @@ using zehreken.i_cheat;
 using zehreken.i_cheat.Extensions;
 using Mogze.Core.MiniBus;
 using zehreken.i_cheat.MockData;
-using Mogze.Core.Services;
 
 public class Main : MonoBehaviour
 {
@@ -14,6 +13,8 @@ public class Main : MonoBehaviour
 	public int[] Array;
 	private int _a = 0;
 	private MiniBusTests _miniBusTests;
+
+    private ServicesTester _servicesTester;
 
 	void Start()
 	{
@@ -31,6 +32,8 @@ public class Main : MonoBehaviour
 		GenericToStringTest();
 		
 		// _miniBusTests = new MiniBusTests(this);
+
+        _servicesTester = new ServicesTester();
 	}
 
 	private void MiniBusTest(Dictionary<string, object> data)
@@ -49,7 +52,7 @@ public class Main : MonoBehaviour
 
 	void Update()
 	{
-        MiniBus.PublishEvent(GameEvent.Test, new Dictionary<string, object> {{"test", _a++}});
+        // MiniBus.PublishEvent(GameEvent.Test, new Dictionary<string, object> {{"test", _a++}});
 		
 		// _miniBusTests.Update();
 	}

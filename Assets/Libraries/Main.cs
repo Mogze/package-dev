@@ -27,7 +27,8 @@ public class Main : MonoBehaviour
 		Array = new int[10];
 		Array.Fill(3);
 
-		MiniBus.SubscribeToEvent(GameEvent.Test, MiniBusTest);
+        MiniBus.SubscribeToEvent<TestMessage>(MiniBusTest);
+        MiniBus.SubscribeToEvent<TestMessage>(MiniBusTestTwo);
 
 		GenericToStringTest();
 		
@@ -36,10 +37,17 @@ public class Main : MonoBehaviour
         _servicesTester = new ServicesTester();
 	}
 
-	private void MiniBusTest(Dictionary<string, object> data)
+	private void MiniBusTest(IMessage data)
 	{
-		Dbg.Log(data["test"].ToString().Bold());
+        var typed = (TestMessage) data;
+		Dbg.Log($"first listener: {typed.TestInt}".Color(Color.gray));
 	}
+
+    private void MiniBusTestTwo(IMessage data)
+    {
+        var typed = (TestMessage) data;
+        Dbg.Log($"second listener: {typed.TestInt}".Color(Color.yellow));
+    }
 
 	private void GenericToStringTest()
 	{
@@ -52,7 +60,7 @@ public class Main : MonoBehaviour
 
 	void Update()
 	{
-        // MiniBus.PublishEvent(GameEvent.Test, new Dictionary<string, object> {{"test", _a++}});
+        MiniBus.PublishEvent<TestMessage>(new TestMessage(10));
 		
 		// _miniBusTests.Update();
 	}
@@ -64,7 +72,8 @@ public class Main : MonoBehaviour
 
 	private void OnDestroy()
 	{
-		MiniBus.UnsubscribeFromEvent(GameEvent.Test, MiniBusTest);
+        MiniBus.UnsubscribeFromEvent<TestMessage>(MiniBusTest);
+        MiniBus.UnsubscribeFromEvent<TestMessage>(MiniBusTestTwo);
 
 		_miniBusTests = null;
 	}

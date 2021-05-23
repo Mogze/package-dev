@@ -27,8 +27,8 @@ public class Main : MonoBehaviour
 		Array = new int[10];
 		Array.Fill(3);
 
-        MiniBus.SubscribeToEvent<TestMessage>(MiniBusTest);
-        MiniBus.SubscribeToEvent<TestMessage>(MiniBusTestTwo);
+        // MiniBus.SubscribeToEvent<TestMessage>(MiniBusTest);
+        // MiniBus.SubscribeToEvent<TestMessage>(MiniBusTestTwo);
 
 		GenericToStringTest();
 		

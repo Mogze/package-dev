@@ -1,5 +1,5 @@
-# i-cheat
-
-This project is a small library of patterns, extensions, functions and methods I
-need to do my daily job.  I got sick of looking for them in different projects;
-so, I have decided to create a collection.  Feel free to use whatever you want.
+* To edit a library, remove the dependency from the Package Manager
+* Then clone it under Packages folder using 'git clone'
+* Edit and update the version and other necessary fields
+* Delete the library folder from Packages folder
+* For testing, add dependency again, you should see the new version in Package Manager

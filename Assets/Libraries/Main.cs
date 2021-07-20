@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using zehreken.i_cheat;
 using zehreken.i_cheat.Extensions;
+using Mogze.Core.StringUtilities;
 using Mogze.Core.MiniBus;
 using zehreken.i_cheat.MockData;
 
@@ -55,7 +56,7 @@ public class Main : MonoBehaviour
 		testData.int_1 = 12;
 		testData.string_1 = "twelve";
 		testData.dict_1 = new Dictionary<string, string> {{"asd", "qwe"}};
-		Debug.Log(StringExtensions.ToString(testData));
+		Debug.Log(testData.ToPrintable());
 	}
 
 	void Update()

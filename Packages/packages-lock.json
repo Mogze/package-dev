@@ -1,11 +1,10 @@
 {
   "dependencies": {
     "com.mogze.core": {
-      "version": "https://github.com/Mogze/core.git",
+      "version": "file:core",
       "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "cb633cb40bad3cb718b6110b4efd7b215ff42b2f"
+      "source": "embedded",
+      "dependencies": {}
     },
     "com.unity.2d.sprite": {
       "version": "1.0.0",

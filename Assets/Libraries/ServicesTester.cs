@@ -25,6 +25,11 @@ public class ServicesTester
             Debug.Log($"Test Service Initialized {DateTime.Now}");
         }
 
+        public void Pause(bool isPaused)
+        {
+
+        }
+
         public void Close()
         {
             Debug.Log("Test Service closed");
@@ -38,6 +43,11 @@ public class ServicesTester
             Debug.Log($"Test Service 2 Initializing {DateTime.Now}");
             await Task.Delay(2000);
             Debug.Log($"Test Service 2 Initialized {DateTime.Now}");
+        }
+
+        public void Pause(bool isPaused)
+        {
+
         }
 
         public void Close()

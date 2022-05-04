@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "com.mogze.core": "https://github.com/Mogze/core.git",
+    "com.mogze.audio": "https://github.com/Mogze/package-audio.git",
+    "com.mogze.core": "https://github.com/Mogze/package-core.git",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",
     "com.unity.analytics": "3.6.12",

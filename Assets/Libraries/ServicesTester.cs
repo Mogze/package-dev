@@ -1,17 +1,19 @@
 using Mogze.Core.Services;
+using Mogze.Audio;
 using UnityEngine;
 using System.Threading.Tasks;
 using System;
 
 public class ServicesTester
 {
-    public ServicesTester()
+    public ServicesTester(Transform parent, AudioDictionary audioDictionary)
     {
         var testService = new TestService();
         var testService2 = new TestService2();
 
         Services.AddService<TestService>(testService);
         Services.AddService<TestService2>(testService2);
+        Services.AddService<AudioService>(new AudioService(parent, audioDictionary));
 
         Services.Initialize();
     }

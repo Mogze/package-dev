@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using zehreken.i_cheat;
-using zehreken.i_cheat.Extensions;
 using Mogze.Core.StringUtilities;
 using Mogze.Core.MiniBus;
 using Mogze.Audio;
-using zehreken.i_cheat.MockData;
+using Mogze.MockData;
 using System.Threading.Tasks;
+using Mogze.Extensions;
 
 public class Main : MonoBehaviour
 {

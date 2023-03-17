@@ -1,4 +1,4 @@
-﻿namespace zehreken.i_cheat.Extensions
+﻿namespace Mogze.Extensions
 {
 	public static class ArrayExtenions
 	{

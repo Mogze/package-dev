@@ -1,13 +1,13 @@
 ﻿// Use this line to generate the .dll, you have to have mono compiler
 // You have to use the .dll to trace the stack correctly
-// Otherwise all debug lines will point this class
+// Otherwise all debug lines will point to this class
 // You should change the UnityEngine.dll path and Dbg.cs path appropriately
 // mcs -sdk:2 -r:/Applications/Unity/Unity.app/Contents/Managed/UnityEngine.dll -target:library Assets/Scripts/Debug/Dbg.cs
 
 /*
 using UnityEngine;
 
-namespace zehreken.i_cheat
+namespace Mogze
 {
 	public static class Dbg
 	{

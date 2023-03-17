@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace zehreken.i_cheat.MockData
+namespace Mogze.MockData
 {
 	public struct TestData
 	{
